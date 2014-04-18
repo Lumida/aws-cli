@@ -80,6 +80,7 @@ GET_DATA = {
 GET_VARIABLE = {
     'provider': 'aws',
     'output': 'json',
+    'role_arn': 'arn:aws:iam::123456789123:role/foo',
 }
 
 
