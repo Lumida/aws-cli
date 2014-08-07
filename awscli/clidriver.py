@@ -226,7 +226,7 @@ class CLIDriver(object):
             # Get default credentials to use with STS if this is a role profile
             default_creds = self.session.get_credentials()
             self.session.profile = args.profile
-            if self.session.get_variable('role_arn'):
+            if self.session.get_config_variable('role_arn'):
                 if not default_creds:
                 # Can't get STS keys and token without credentials so error and exit
                     msg = ('Insufficient default credentials provided. '
@@ -234,7 +234,7 @@ class CLIDriver(object):
                            '"aws configure".')
                     self._show_error(msg)
                     sys.exit(255)
-                role_arn = self.session.get_variable('role_arn')
+                role_arn = self.session.get_config_variable('role_arn')
                 sts = self.session.get_service('sts')
                 operation = sts.get_operation('AssumeRole')
                 endpoint = sts.get_endpoint('us-east-1')
