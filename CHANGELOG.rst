@@ -3,9 +3,55 @@ CHANGELOG
 =========
 
 
-Next Release (TBD)
-==================
+1.3.25
+======
 
+* bugfix:``aws ec2 describe-network-interface-attribute``: Fix issue where
+  the model for the ``aws ec2 describe-network-interface-attribute`` was
+  incorrect
+  (`issue 558 <https://github.com/aws/aws-cli/issues/558>`__)
+* bugfix:``aws s3``: Add option to not follow symlinks via
+  ``--[no]-follow-symlinks``.  Note that the default behavior of following
+  symlinks is left unchanged.
+  (`issue 854 <https://github.com/aws/aws-cli/pull/854>`__,
+   `issue 453 <https://github.com/aws/aws-cli/issues/453>`__,
+   `issue 781 <https://github.com/aws/aws-cli/issues/781>`__)
+* bugfix:``aws route53 change-tags-for-resource``: Fix serialization issue
+  for ``aws route53 change-tags-for-resource``
+  (`botocore issue 328 <https://github.com/boto/botocore/pull/328>`__)
+* bugfix:``aws ec2 describe-network-interface-attribute``: Update parameters
+  to add the ``--attribute`` argument
+  (`botocore issue 327 <https://github.com/boto/botocore/pull/327>`__)
+* feature:``aws autoscaling``: Update command to the latest version
+* feature:``aws elasticache``: Update command to the latest version
+* feature:``aws route53``: Update command to the latest version
+* feature:``aws route53domains``: Add support for Amazon Route53 Domains
+
+
+1.3.24
+======
+
+* feature:``aws elasticloadbalancing``: Update to the latest service model.
+* bugfix:``aws swf poll-for-decision-task``: Fix issue where
+  the default paginated response is missing output response keys
+  (`issue botocore 324 <https://github.com/boto/botocore/pull/324>`__)
+* bugfix:Connections: Fix issue where connections were hanging
+  when network issues occurred
+  `issue botocore 325 <https://github.com/boto/botocore/pull/325>`__)
+* bugfix:``aws s3/s3api``: Fix issue where Deprecations were being
+  written to stderr in Python 3.4.1
+  `issue botocore 319 <https://github.com/boto/botocore/issues/319>`__)
+
+
+1.3.23
+======
+
+* feature:``aws support``: Update ``aws support`` command to
+  the latest version
+* feature:``aws iam``: Update ``aws iam`` command to the latest
+  version
+* feature:``aws emr``: Add ``--hive-site`` option to
+  ``aws emr create-cluster`` and ``aws emr install-application`` commands
 * feature:``aws s3 sync``: Add an ``--exact-timestamps`` option
   to the ``aws s3 sync`` command
   (`issue 824 <https://github.com/aws/aws-cli/pull/824>`__)
